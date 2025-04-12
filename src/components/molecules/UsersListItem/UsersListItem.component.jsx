@@ -8,13 +8,17 @@ const showIndex = (index) => {
 	alert(`This is student #${index + 1}`);
 };
 
-const UsersListItem = ({ index, userData: { average, name, attendance } }) => {
+const UsersListItem = ({
+	deleteUser,
+	userData: { average, name, attendance },
+}) => {
 	return (
 		<Wrapper>
 			<Average value={average}>{average}</Average>
 			<StyledInfo>
-				<p>{name}
-				<DeleteButton onClick={() => showIndex(index)} />
+				<p>
+					{name}
+					<DeleteButton onClick={() => deleteUser(name)} />
 				</p>
 				<p>attendance: {attendance}</p>
 			</StyledInfo>
