@@ -7,7 +7,7 @@ import { Input } from '../../atoms/input/Input.styles';
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	align-content: flex-start;
+	align-items: flex-start;
 
 	${Label} {
 		margin: 10px;
@@ -17,6 +17,7 @@ const Wrapper = styled.div`
 const FormField = ({
 	onChange,
 	value,
+	checked,
 	label,
 	name,
 	id,
@@ -31,8 +32,9 @@ const FormField = ({
 				id={id}
 				type={type}
 				value={value}
+				{...(type === 'checkbox' ? { checked } : { value })}
 				onChange={onChange}
-				data-testid={label }></Input>
+				data-testid={label}></Input>
 		</Wrapper>
 	);
 };
@@ -42,6 +44,9 @@ FormField.propTypes = {
 	name: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,
 	type: PropTypes.string,
+	value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	checked: PropTypes.bool,
+	onChange: PropTypes.func,
 };
 
 export default FormField;
