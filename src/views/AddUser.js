@@ -4,7 +4,7 @@ import { Title } from '../components/atoms/Title/Title.styles.jsx';
 import FormField from '../components/molecules/FormField/FormField.component.jsx';
 import { Button } from '../components/atoms/Button/Button.styles.jsx';
 import { UsersContext } from '../providers/UsersProvider.jsx';
-import { useForm } from '../hooks/useForm.js';
+import { useForm } from '../hooks/useForm.jsx';
 // rscp !!!!
 
 const initialFormState = {
