@@ -9,11 +9,9 @@ import {
 import { Button } from '../../atoms/Button/Button.styles';
 import axios from 'axios';
 
-const API_TOKEN = '5ba0561d2a7d4e949dc311e8f7a017';
+const API_TOKEN = process.env.REACT_APP_API_TOKEN;
 
 const NewsSection = () => {
-	
-
 	const [articles, setArticles] = useState([]);
 	const [error, setError] = useState('');
 
@@ -44,7 +42,7 @@ const NewsSection = () => {
 				setArticles(data.allArticles);
 			})
 			.catch(() => setError(`Sorry, we couldn't load articles for you`));
-	},[]);
+	}, []);
 
 	return (
 		<Wrapper>
