@@ -19,7 +19,7 @@ export const handlers = [
 	}),
 
 	http.post('/students/search', async ({ request }) => {
-		const { searchPhrase } = await request.json(); 
+		const { searchPhrase } = await request.json();
 		const matchingStudents = searchPhrase
 			? students.filter((student) =>
 					student.name.toLowerCase().includes(searchPhrase.toLowerCase())
