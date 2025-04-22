@@ -18,11 +18,10 @@ const UsersProvider = ({ children }) => {
 			axios
 				.get('/students')
 				.then(({ data }) => {
-					console.log('Received data:', data);
 					setUsers(data.students);
 				})
 				.catch((err) => {
-					console.log('Error:', err);
+					console.log('Error:', err); 
 					setUsers([]);
 				});
 		};
