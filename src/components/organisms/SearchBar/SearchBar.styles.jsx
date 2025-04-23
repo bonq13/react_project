@@ -33,9 +33,7 @@ export const SearchWrapper = styled.div`
 	position: relative;
 `;
 
-export const SearchResults = styled.ul.withConfig({
-	shouldForwardProp: (prop) => !['isVisible'].includes(prop),
-})`
+export const SearchResults = styled.ul`
 	z-index: 1000;
 	max-height: 500px;
 	overflow-y: scroll;
