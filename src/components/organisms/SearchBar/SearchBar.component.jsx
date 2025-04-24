@@ -43,20 +43,21 @@ export const SearchBar = () => {
 				</p>
 			</StatusInfo>
 			<SearchWrapper>
-				<Input {...getInputProps()} name='Search' id='Search' />
-				{isOpen && matchingStudents.length > 0 && (
-					<SearchResults {...getMenuProps()}>
-						{matchingStudents.map((item, index) => (
-							<SearchResultsItem
-								highlighted={highlightedIndex === index}
-								{...getItemProps({ item, index })}
-								key={item.id}>
-								{item.name}
-							</SearchResultsItem>
-						))}
-					</SearchResults>
-				)}
-			</SearchWrapper>
+                <Input {...getInputProps()} name="Search" id="Search" />
+                <SearchResults {...getMenuProps()}>
+                    {isOpen && matchingStudents.length > 0 ? (
+                        matchingStudents.map((item, index) => (
+                            <SearchResultsItem
+                                highlighted={highlightedIndex === index}
+                                {...getItemProps({ item, index })}
+                                key={item.id}
+                            >
+                                {item.name}
+                            </SearchResultsItem>
+                        ))
+                    ) : null}
+                </SearchResults>
+            </SearchWrapper>
 		</SearchBarWrapper>
 	);
 };
