@@ -12,7 +12,6 @@ import {
 import MainTemplate from '../components/templates/MainTemplate/MainTemplate';
 import AddUser from './AddUser';
 import Dashboard from './Dashboard';
-
 const App = () => {
 	return (
 		<Router>
@@ -24,7 +23,7 @@ const App = () => {
 							<Route
 								path='/'
 								element={<Navigate to='/group' replace />}></Route>
-							<Route path='/group/:id?' element={<Dashboard />}></Route> 
+							<Route path='/group/:id?' element={<Dashboard />}></Route>
 						</Routes>
 					</Wrapper>
 				</MainTemplate>

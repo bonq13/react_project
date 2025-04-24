@@ -5,6 +5,7 @@ export const Wrapper = styled.li`
 	flex-direction: row;
 	align-items: center;
 	position: relative;
+	cursor: pointer;
 
 	&:not(:last-child)::after {
 		content: '';
